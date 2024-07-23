@@ -12,15 +12,17 @@ namespace Notification.API.Controllers
     {
         [HttpPost]
         [Route(nameof(AddEmail))]
-        public async Task AddEmail([FromBody] AddEmailDto dto, CancellationToken token)
+        public async Task<IActionResult> AddEmail([FromBody] AddEmailDto dto, CancellationToken token)
         {
             await service.AddEmail(dto, token);
+            return Created();
         }
         [HttpGet]
         [Route(nameof(GetEmails))]
-        public async Task<List<GetEmailDto>> GetEmails(CancellationToken token)
+        public async Task<IActionResult> GetEmails(CancellationToken token)
         {
-            return await service.GetEmails(token);
+            var result = await service.GetEmails(token);
+            return Ok(result);
         }
     }
 }

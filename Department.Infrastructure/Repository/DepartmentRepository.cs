@@ -25,7 +25,7 @@ namespace Department.Infrastructure.Repository
 
         public async Task<Core.DomainEnties.Department> GetDepartmentByid(int Id, CancellationToken token)
         {
-            var department = await context.Departments.FirstAsync(x=>x.Id == Id, token);
+            var department = await context.Departments.FirstOrDefaultAsync(x=>x.Id == Id, token);
             return department;
         }
 

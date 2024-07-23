@@ -8,11 +8,14 @@ namespace Notification.API.Regisiters.App
     {
         public void RegisterPipelineComponents(WebApplication app)
         {
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
             app.UseSwagger();
             app.UseSwaggerUI();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.MapControllers();
 

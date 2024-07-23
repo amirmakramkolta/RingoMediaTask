@@ -12,21 +12,25 @@ namespace Department.API.Controllers
     {
         [HttpPost]
         [Route(nameof(AddDepartment))]
-        public async Task AddDepartment([FromBody]AddDepartmentDto dto, CancellationToken token)
+        public async Task<IActionResult> AddDepartment([FromBody]AddDepartmentDto dto, CancellationToken token)
         {
             await service.AddDepartment(dto, token);
+            return Created();
         }
         [HttpGet]
         [Route(nameof(GetDepartments))]
-        public async Task<List<GetDepartmentDto>> GetDepartments(int? ParentDepartment, CancellationToken token)
+        public async Task<IActionResult> GetDepartments(int? ParentDepartment, CancellationToken token)
         {
-            return await service.GetDepartments(ParentDepartment, token);
+            var result = await service.GetDepartments(ParentDepartment, token);
+            return Ok(result);
         }
         [HttpGet]
         [Route(nameof(GetDepartment))]
-        public async Task<GetDepartmentDto> GetDepartment(int Id, CancellationToken token)
+        public async Task<IActionResult> GetDepartment(int Id, CancellationToken token)
         {
-            return await service.GetDepartment(Id, token);
+            var result = await service.GetDepartment(Id, token);
+            if (result == null) return NotFound();
+            return Ok(result);
         }
     }
 }

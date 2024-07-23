@@ -10,6 +10,6 @@ namespace Department.Application.Dtos.Request
     {
         public string DepartmentName { get; set; }
         public string logo { get; set; }
-        public int ParentDepartmentId { get; set; }
+        public int? ParentDepartmentId { get; set; }
     }
 }
