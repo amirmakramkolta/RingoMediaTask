@@ -1,4 +1,6 @@
-﻿using Notification.API.Regisiters.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Notification.API.Regisiters.Interfaces;
+using Notification.Infrastructure.Peristence;
 
 namespace Notification.API.Regisiters.App
 {
@@ -13,6 +15,11 @@ namespace Notification.API.Regisiters.App
             app.UseAuthorization();
 
             app.MapControllers();
+
+            using var scope = app.Services.CreateScope();
+            var Services = scope.ServiceProvider;
+            var NotificationContext = Services.GetRequiredService<NotifictionDbContext>();
+            NotificationContext.Database.Migrate();
         }
     }
 }

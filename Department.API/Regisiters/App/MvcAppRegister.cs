@@ -1,4 +1,6 @@
 ﻿using Department.API.Regisiters.Interfaces;
+using Department.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Department.API.Regisiters.App
 {
@@ -14,6 +16,11 @@ namespace Department.API.Regisiters.App
             app.UseAuthorization();
 
             app.MapControllers();
+
+            using var scope = app.Services.CreateScope();
+            var Services = scope.ServiceProvider;
+            var DepartmentContext = Services.GetRequiredService<DepartmentDbContext>();
+            DepartmentContext.Database.Migrate();
         }
     }
 }
