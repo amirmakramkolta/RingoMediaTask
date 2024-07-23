@@ -4,7 +4,9 @@ import { MainComponent } from './Pages/main/main.component';
 
 const routes: Routes = [
   {path:'',component:MainComponent},
-  
+  {path:'Department', loadChildren: ()=> import("./Modules/Department/department.module").then(m=>m.DepartmentModule)},
+  {path:'Notification', loadChildren:()=> import("./Modules/Notification/notification.module").then(m=>m.NotificationModule)}
+
 ];
 
 @NgModule({
