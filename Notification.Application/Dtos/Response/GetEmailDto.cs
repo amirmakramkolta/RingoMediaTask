@@ -8,5 +8,8 @@ namespace Notification.Application.Dtos.Response
 {
     public class GetEmailDto
     {
+        public string Email { get; set; }
+        public DateTime SentAt { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

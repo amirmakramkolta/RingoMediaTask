@@ -9,9 +9,9 @@ namespace Notification.Core.Interfaces
 {
     public interface INotificationRepository
     {
-        public Task AddNotification(EmailNotification notification);
-        public Task<List<EmailNotification>> GetAllNotification();
-        public Task<int> Commit();
+        public Task AddNotification(string Email, DateTime SentAt, CancellationToken token);
+        public Task<List<EmailNotification>> GetAllNotification(CancellationToken token);
+        public Task<int> Commit(CancellationToken token);
 
     }
 }

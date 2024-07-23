@@ -8,5 +8,7 @@ namespace Notification.Application.Dtos.Request
 {
     public class AddEmailDto
     {
+        public string Email { get; set; }
+        public DateTime SentAt { get; set; }
     }
 }

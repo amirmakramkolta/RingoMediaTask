@@ -1,5 +1,6 @@
 ﻿using Department.Core.Interfaces;
 using Department.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,19 +12,21 @@ namespace Department.Infrastructure.Repository
     public class DepartmentRepository(DepartmentDbContext context) : IDepartmentRepository
     {
 
-        public Task AddDepartment(Core.DomainEnties.Department NewDepartment, int parentDepartment)
+        public async Task AddDepartment(string Name, string logo, int? parentDepartment, CancellationToken token)
         {
-            throw new NotImplementedException();
+            var NewDepartment = Core.DomainEnties.Department.CreateNewDepartment(Name, logo, parentDepartment);
+            await context.Departments.AddAsync(NewDepartment, token);
         }
 
-        public async Task<int> Commit()
+        public async Task<int> Commit(CancellationToken token)
         {
-            return await context.SaveChangesAsync();
+            return await context.SaveChangesAsync(token);
         }
 
-        public Task<List<Core.DomainEnties.Department>> GetDepartments(int parentDepartmentId)
+        public async Task<List<Core.DomainEnties.Department>> GetDepartments(int? parentDepartmentId, CancellationToken token)
         {
-            throw new NotImplementedException();
+            var list = context.Departments.Where(x => x.ParentDpartmentId == parentDepartmentId);
+            return await list.ToListAsync(token);
         }
     }
 }

@@ -8,8 +8,8 @@ namespace Department.Core.Interfaces
 {
     public interface IDepartmentRepository
     {
-        public Task AddDepartment(Department.Core.DomainEnties.Department NewDepartment, int parentDepartment);
-        public Task<List<Department.Core.DomainEnties.Department>> GetDepartments(int parentDepartmentId);
-        public Task<int> Commit();
+        public Task AddDepartment(string Name, string logo, int? parentDepartment, CancellationToken token);
+        public Task<List<Department.Core.DomainEnties.Department>> GetDepartments(int? parentDepartmentId, CancellationToken token);
+        public Task<int> Commit(CancellationToken token);
     }
 }

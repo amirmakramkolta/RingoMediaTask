@@ -18,14 +18,27 @@ namespace Department.Application.Services
             _departmentRepository = departmentRepository;
         }
 
-        public void AddDepartment(AddDepartmentDto NewDepartment)
+        public async Task AddDepartment(AddDepartmentDto NewDepartment, CancellationToken token)
         {
-            throw new NotImplementedException();
+            await _departmentRepository.AddDepartment(NewDepartment.DepartmentName, NewDepartment.logo, NewDepartment.ParentDepartmentId, token);
+            await _departmentRepository.Commit(token);
         }
 
-        public List<GetDepartmentDto> GetDepartments(int ParentId)
+        public async Task<List<GetDepartmentDto>> GetDepartments(int? ParentId, CancellationToken token)
         {
-            throw new NotImplementedException();
+            var list = await _departmentRepository.GetDepartments(ParentId, token);
+            return list.Select(x =>
+            {
+                return new GetDepartmentDto()
+                {
+                    Id = x.Id,
+                    DepartmentName = x.Name,
+                    Logo = x.Logo,
+                    ParentDepartmentId = x.ParentDpartmentId,
+                    CreatedAt = x.CreatedAt
+                };
+            }).ToList();
+
         }
     }
 }

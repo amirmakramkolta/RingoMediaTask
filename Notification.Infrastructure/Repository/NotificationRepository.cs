@@ -7,16 +7,17 @@ namespace Notification.Infrastructure.Repository
 {
     public class NotificationRepository(NotifictionDbContext context) : INotificationRepository
     {
-        public async Task<int> Commit() => await context.SaveChangesAsync();
+        public async Task<int> Commit(CancellationToken token) => await context.SaveChangesAsync(token);
 
-        public async Task AddNotification(EmailNotification notification)
+        public async Task AddNotification(string Email, DateTime SentAt, CancellationToken token)
         {
-            await context.EmailNotifications.AddAsync(notification);
+            var NewEmail = EmailNotification.CreateNotification(Email, SentAt);
+            await context.EmailNotifications.AddAsync(NewEmail, token);
         }
 
-        public async Task<List<EmailNotification>> GetAllNotification()
+        public async Task<List<EmailNotification>> GetAllNotification(CancellationToken token)
         {
-            return await context.EmailNotifications.ToListAsync();
+            return await context.EmailNotifications.ToListAsync(token);
         }
     }
 }

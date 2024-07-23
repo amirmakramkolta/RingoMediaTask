@@ -10,7 +10,7 @@ namespace Department.Application.Interfaces
 {
     public interface IDepartmentService
     {
-        public void AddDepartment(AddDepartmentDto NewDepartment);
-        public List<GetDepartmentDto> GetDepartments(int ParentId);
+        public Task AddDepartment(AddDepartmentDto NewDepartment, CancellationToken token);
+        public Task<List<GetDepartmentDto>> GetDepartments(int? ParentId, CancellationToken token);
     }
 }

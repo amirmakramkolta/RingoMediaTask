@@ -8,9 +8,25 @@ namespace Notification.Core.DomainEntities
 {
     public class EmailNotification
     {
-        public int Id { get; set; }
-        public string Email { get; set; }
-        public DateTime SentAt { get; set; }
-        public DateTime CreatedAt { get; set; }
+        private EmailNotification()
+        {
+
+        }
+        public int Id { get; private set; }
+        public string Email { get; private set; }
+        public DateTime SentAt { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+
+        public static EmailNotification CreateNotification(string Email, DateTime SentAt)
+        {
+            var NewNotification = new EmailNotification()
+            {
+                Email = Email,
+                SentAt = SentAt,
+                CreatedAt = DateTime.Now
+            };
+            return NewNotification;
+        }
+
     }
 }
