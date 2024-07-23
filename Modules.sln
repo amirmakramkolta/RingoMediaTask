@@ -7,21 +7,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deparmtent", "Deparmtent", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification", "Notification", "{6ADB419B-DA3B-4129-8A29-6EA7D99F04AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Department.API", "Department.API\Department.API.csproj", "{BB426EBA-E59E-4C9D-A29A-8C95272FCD09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Department.API", "Department.API\Department.API.csproj", "{BB426EBA-E59E-4C9D-A29A-8C95272FCD09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Department.Infrastructure", "Department.Infrastructure\Department.Infrastructure.csproj", "{14C802E0-D2BB-4D71-AEC2-A5FCF17BA263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Department.Infrastructure", "Department.Infrastructure\Department.Infrastructure.csproj", "{14C802E0-D2BB-4D71-AEC2-A5FCF17BA263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Department.Application", "Department.Application\Department.Application.csproj", "{FA28442B-779F-4AC6-8DE7-D33A58FBD5F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Department.Application", "Department.Application\Department.Application.csproj", "{FA28442B-779F-4AC6-8DE7-D33A58FBD5F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Department.Core", "Department.Core\Department.Core.csproj", "{123ADAF8-7BF7-4FCB-BC42-F5868CAF1293}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Department.Core", "Department.Core\Department.Core.csproj", "{123ADAF8-7BF7-4FCB-BC42-F5868CAF1293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.API", "Notification.API\Notification.API.csproj", "{D1634CAC-63DB-4CF6-9A24-F3E16A50E3CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.API", "Notification.API\Notification.API.csproj", "{D1634CAC-63DB-4CF6-9A24-F3E16A50E3CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.Infrastructure", "Notification.Infrastructure\Notification.Infrastructure.csproj", "{51D61DBA-6D43-4496-8E09-686F18C1D6F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Infrastructure", "Notification.Infrastructure\Notification.Infrastructure.csproj", "{51D61DBA-6D43-4496-8E09-686F18C1D6F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.Application", "Notification.Application\Notification.Application.csproj", "{3188A81E-EBB0-437D-92F9-ADD5817EE0C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Application", "Notification.Application\Notification.Application.csproj", "{3188A81E-EBB0-437D-92F9-ADD5817EE0C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.Core", "Notification.Core\Notification.Core.csproj", "{6B46E0B5-5796-4A4B-808C-574E4AC15082}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Core", "Notification.Core\Notification.Core.csproj", "{6B46E0B5-5796-4A4B-808C-574E4AC15082}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{7EFF2443-07A7-4611-ACDF-324A5CCDD7BD}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Module.FrontEnd", "Module.FrontEnd\Module.FrontEnd.esproj", "{88926C01-9CB4-4822-9D70-D748BFB510EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +65,12 @@ Global
 		{6B46E0B5-5796-4A4B-808C-574E4AC15082}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B46E0B5-5796-4A4B-808C-574E4AC15082}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B46E0B5-5796-4A4B-808C-574E4AC15082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88926C01-9CB4-4822-9D70-D748BFB510EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88926C01-9CB4-4822-9D70-D748BFB510EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88926C01-9CB4-4822-9D70-D748BFB510EA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{88926C01-9CB4-4822-9D70-D748BFB510EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88926C01-9CB4-4822-9D70-D748BFB510EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88926C01-9CB4-4822-9D70-D748BFB510EA}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +84,7 @@ Global
 		{51D61DBA-6D43-4496-8E09-686F18C1D6F8} = {6ADB419B-DA3B-4129-8A29-6EA7D99F04AD}
 		{3188A81E-EBB0-437D-92F9-ADD5817EE0C3} = {6ADB419B-DA3B-4129-8A29-6EA7D99F04AD}
 		{6B46E0B5-5796-4A4B-808C-574E4AC15082} = {6ADB419B-DA3B-4129-8A29-6EA7D99F04AD}
+		{88926C01-9CB4-4822-9D70-D748BFB510EA} = {7EFF2443-07A7-4611-ACDF-324A5CCDD7BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C859DC7-FF3A-46F9-97D9-B3A02FDEEDB2}
