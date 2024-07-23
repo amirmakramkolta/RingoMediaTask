@@ -40,5 +40,20 @@ namespace Department.Application.Services
             }).ToList();
 
         }
+
+        public async Task<GetDepartmentDto> GetDepartment(int Id, CancellationToken token)
+        {
+            var departmentResult = await _departmentRepository.GetDepartmentByid(Id, token);
+            var department = new GetDepartmentDto()
+            {
+                Id = departmentResult.Id,
+                DepartmentName = departmentResult.Name,
+                Logo = departmentResult.Logo,
+                CreatedAt = departmentResult.CreatedAt,
+            };
+
+            return department;
+        }
+
     }
 }

@@ -22,5 +22,11 @@ namespace Department.API.Controllers
         {
             return await service.GetDepartments(ParentDepartment, token);
         }
+        [HttpGet]
+        [Route(nameof(GetDepartment))]
+        public async Task<GetDepartmentDto> GetDepartment(int Id, CancellationToken token)
+        {
+            return await service.GetDepartment(Id, token);
+        }
     }
 }

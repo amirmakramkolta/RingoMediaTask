@@ -23,6 +23,12 @@ namespace Department.Infrastructure.Repository
             return await context.SaveChangesAsync(token);
         }
 
+        public async Task<Core.DomainEnties.Department> GetDepartmentByid(int Id, CancellationToken token)
+        {
+            var department = await context.Departments.FirstAsync(x=>x.Id == Id, token);
+            return department;
+        }
+
         public async Task<List<Core.DomainEnties.Department>> GetDepartments(int? parentDepartmentId, CancellationToken token)
         {
             var list = context.Departments.Where(x => x.ParentDpartmentId == parentDepartmentId);

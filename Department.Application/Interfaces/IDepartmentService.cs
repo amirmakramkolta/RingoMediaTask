@@ -12,5 +12,6 @@ namespace Department.Application.Interfaces
     {
         public Task AddDepartment(AddDepartmentDto NewDepartment, CancellationToken token);
         public Task<List<GetDepartmentDto>> GetDepartments(int? ParentId, CancellationToken token);
+        public Task<GetDepartmentDto> GetDepartment(int Id, CancellationToken token);
     }
 }
