@@ -18,9 +18,9 @@ namespace Notification.API.Controllers
         }
         [HttpGet]
         [Route(nameof(GetEmails))]
-        public async Task<List<GetEmailDto>> GetEmails()
+        public async Task<List<GetEmailDto>> GetEmails(CancellationToken token)
         {
-            return await service.GetEmails();
+            return await service.GetEmails(token);
         }
     }
 }
