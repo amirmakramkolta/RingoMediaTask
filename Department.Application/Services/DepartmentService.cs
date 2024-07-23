@@ -23,7 +23,7 @@ namespace Department.Application.Services
             throw new NotImplementedException();
         }
 
-        public List<DepartmentResultDto> GetDepartments(int ParentId)
+        public List<GetDepartmentDto> GetDepartments(int ParentId)
         {
             throw new NotImplementedException();
         }

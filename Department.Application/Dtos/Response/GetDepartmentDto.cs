@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Department.Application.Dtos.Response
 {
-    public class DepartmentResultDto
+    public class GetDepartmentDto
     {
         public int Id { get; set; }
         public int ParentDepartmentId { get; set; }

@@ -11,6 +11,6 @@ namespace Department.Application.Interfaces
     public interface IDepartmentService
     {
         public void AddDepartment(AddDepartmentDto NewDepartment);
-        public List<DepartmentResultDto> GetDepartments(int ParentId);
+        public List<GetDepartmentDto> GetDepartments(int ParentId);
     }
 }
