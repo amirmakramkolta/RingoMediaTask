@@ -19,6 +19,7 @@ namespace Notification.API.Regisiters.Builder
                 });
             builder.Services.AddScoped<INotificationRepository,NotificationRepository>();
             builder.Services.AddScoped<INotificationService, NotificationService>();
+            builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Hangfire;
+using Microsoft.EntityFrameworkCore;
 using Notification.API.Regisiters.Interfaces;
 using Notification.Infrastructure.Peristence;
 
@@ -16,6 +17,8 @@ namespace Notification.API.Regisiters.App
 
             app.UseAuthorization();
             app.UseCors(MyAllowSpecificOrigins);
+
+            app.UseHangfireDashboard();
 
             app.MapControllers();
 
