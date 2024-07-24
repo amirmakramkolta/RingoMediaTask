@@ -4,7 +4,7 @@
         <h2 *ngIf="DepartmentId">SubDepartment of {{DepartmentInfo?.departmentName}}</h2>
     </div>
     <div>
-        <a class="btn btn-outline-danger" routerLink="/Department/add" [queryParams]="{DepartmentId}">Add</a>
+        <a class="btn btn-outline-danger" [routerLink]="['/','Department','add']" [queryParams]="{DepartmentId}">Add</a>
     </div>
     <div>
         <table class="table">

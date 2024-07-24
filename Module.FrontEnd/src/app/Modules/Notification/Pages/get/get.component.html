@@ -1,1 +1,26 @@
-<p>get works!</p>
+<div class="container">
+    <div>
+        <h2>Emails</h2>
+    </div>
+    <div>
+        <a class="btn btn-outline-danger" [routerLink]="['/','Notification','add']">Add</a>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Time to send</th>
+                    <th>Created at</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let email of Emails">
+                    <td>{{email.email}}</td>
+                    <td>{{email.sentAt}}</td>
+                    <td>{{email.createdAt}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

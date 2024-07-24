@@ -1,1 +1,18 @@
-<p>add works!</p>
+<div class="container">
+    <div>Add Email</div>
+    <div>
+        <form (submit)="Submit()">
+            <div>
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" name="email" id="email" [(ngModel)]="Email" class="form-control">
+            </div>
+            <div>
+                <label for="dateToSend">Date to send:</label>
+                <input type="datetime-local" name="dateToSend" id="dateToSend" [(ngModel)]="DateTime" class="form-control">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-info">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
