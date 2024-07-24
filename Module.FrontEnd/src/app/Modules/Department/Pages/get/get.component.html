@@ -18,7 +18,12 @@
             <tbody>
                 <tr *ngFor="let department of Departments">
                     <td>{{department.id}}</td>
-                    <td>{{department.departmentName}}</td>
+                    <td>
+                        <div class="">
+                            <img [src]="department.logo" alt="logo" width="30px" height="30px">
+                            {{department.departmentName}}
+                        </div>
+                    </td>
                     <td>
                         <a class="btn btn-outline-primary" routerLink="/Department" [queryParams]="{DepartmentId:department.id}">Show SubDepartment</a>
                     </td>

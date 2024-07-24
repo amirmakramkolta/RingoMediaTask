@@ -16,7 +16,6 @@ export class GetComponent{
   constructor(private service:DepartmentService, private route: ActivatedRoute){
     this.route.queryParams.subscribe(params=>{
       this.DepartmentId = params['DepartmentId']? params['DepartmentId'] : 0
-      console.log(this.DepartmentId)
       this.service.GetDepartments(this.DepartmentId).subscribe(e=>{
         this.Departments = e
       })

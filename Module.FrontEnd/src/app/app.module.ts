@@ -6,19 +6,27 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './Pages/main/main.component';
 import { provideHttpClient } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr, ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()
   ],
   providers: [
-    provideHttpClient()
+    provideHttpClient(),
+    provideAnimations(), // required animations providers
+    provideToastr(),
   ],
   bootstrap: [AppComponent]
 })

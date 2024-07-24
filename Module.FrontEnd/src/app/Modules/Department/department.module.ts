@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DepartmentRoutingModule } from './department-routing.module';
 import { GetComponent } from './Pages/get/get.component';
 import { AddComponent } from './Pages/add/add.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AddComponent } from './Pages/add/add.component';
   ],
   imports: [
     CommonModule,
-    DepartmentRoutingModule
+    DepartmentRoutingModule,
+    FormsModule
   ]
 })
 export class DepartmentModule { }

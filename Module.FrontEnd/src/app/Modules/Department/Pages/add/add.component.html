@@ -1,19 +1,20 @@
 <div class="container">
     <div>
-
+        <h3 *ngIf="DepartmentId == 0">Add new Department</h3>
+        <h3 *ngIf="DepartmentId != 0">Add new sub department for {{DepartmentInfo?.departmentName}}</h3>
     </div>
     <div>
-        <form>
+        <form (submit)="Submit()">
             <div>
                 <label for="name" class="form-label" class="form-label">Name:</label>
-                <input type="text" id="name" name="name" class="form-control">
+                <input type="text" id="name" name="name" [(ngModel)]="NewDepartmentName" class="form-control">
             </div>
             <div>
                 <label for="logo">Logo:</label>
-                <input type="file" name="logo" id="logo" class="form-control">
+                <input type="file" name="logo" id="logo"  accept="image/*" class="form-control" (change)="handleFiles($event)">
             </div>
             <div>
-                <button type="submit">Save</button>
+                <button type="submit" class="btn btn-info">Save</button>
             </div>
         </form>
     </div>
