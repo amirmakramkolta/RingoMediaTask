@@ -20,6 +20,10 @@ export class AddComponent {
       this.toastr.error("Please fill all fields")
       return
     }
+    if(Date.parse(this.DateTime) < Date.now()){
+      this.toastr.error("you should set time in future")
+      return
+    }
     const emailToGo:AddEmailDto = {
       email: this.Email,
       sentAt:this.DateTime
