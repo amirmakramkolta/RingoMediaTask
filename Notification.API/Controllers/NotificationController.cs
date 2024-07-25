@@ -15,7 +15,12 @@ namespace Notification.API.Controllers
         [Route(nameof(AddEmail))]
         public async Task<IActionResult> AddEmail([FromBody] AddEmailDto dto, CancellationToken token)
         {
-            backgroundService.Schedule(() => emailService.sendEmail(dto.Email), (DateTime.Now - dto.SentAt));
+            if(dto.SentAt < DateTime.Now)
+            {
+                return BadRequest("You should have the time in the future");
+            }
+            var timeDiffer = (dto.SentAt - DateTime.Now);
+            backgroundService.Schedule(() => emailService.sendEmail(dto.Email), timeDiffer);
             await service.AddEmail(dto, token);
             return Created();
         }
